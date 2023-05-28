@@ -18,13 +18,27 @@ cityDict = {
 
 def cityChoice():
     print("Which City are you selecting: ")
-    print(cityDict["city1"]["name"])
-    print(cityDict["city2"]["name"])
+    for i in range(1, len(cityDict)+1):
+        print(cityDict["city"+str(i)]["name"])
+    
     choice = input("")
-    for i in range(1, len(cityDict)):
-        if(choice == cityDict["city"+ str(i)]):
-            city = cityDict["city"+ str(i)]
+    for i in range(1, len(cityDict)+1):
+        if(choice == cityDict["city"+ str(i)]["name"]):
+            cityname = cityDict["city"+ str(i)]["name"]
+            print("Would you like the morning or afternoon temperature?")
+            tempChoice = input("")
+            tempChoice = tempChoice.lower()
             
+            if(tempChoice == "morning"):
+              cityTemp = str(cityDict["city"+ str(i)]["Morning Temperature"])
+              print("The morning temperature of " + cityname + " is " + cityTemp)
+            elif(tempChoice == "afternoon"):
+                cityTemp = str(cityDict["city"+ str(i)]["Afternoon Temperature"])
+                print("The afternoon temperature of " + cityname + " is " + cityTemp)
+
+            else:
+                print('incorrect input please try again')
+                cityChoice()
 
 
     
