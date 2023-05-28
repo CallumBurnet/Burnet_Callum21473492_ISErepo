@@ -15,10 +15,11 @@
 ## Temperature file
     1. cityChoice()
     2. cityOutput()
-    ## Weather file
+## Weather file
     1. countryChoice()
     2. output()
 # Modularity
+    
 # Black box test cases
 # White box test cases
 # Test implementation & execution

@@ -199,13 +199,6 @@ def output(countryKey, seasonChoice):
             output(countryKey, seasonChoice)
 
         
-    
-
-    
-
-
-    
-
 
 
 
