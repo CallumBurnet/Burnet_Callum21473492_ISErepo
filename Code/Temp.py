@@ -1,4 +1,5 @@
 #This file will be for the Temperature Module
+
 cityDict = {
     "city1": {
         "name": "Perth",
@@ -24,21 +25,25 @@ def cityChoice():
     choice = input("")
     for i in range(1, len(cityDict)+1):
         if(choice == cityDict["city"+ str(i)]["name"]):
-            cityname = cityDict["city"+ str(i)]["name"]
-            print("Would you like the morning or afternoon temperature?")
-            tempChoice = input("")
-            tempChoice = tempChoice.lower()
+            city = "city" + str(i)
+            Cityoutput(city)
+    
+def Cityoutput(city):
+    print("Would you like the morning or afternoon temperature?")
+    tempChoice = input("")
+    tempChoice = tempChoice.lower()
             
-            if(tempChoice == "morning"):
-              cityTemp = str(cityDict["city"+ str(i)]["Morning Temperature"])
-              print("The morning temperature of " + cityname + " is " + cityTemp)
-            elif(tempChoice == "afternoon"):
-                cityTemp = str(cityDict["city"+ str(i)]["Afternoon Temperature"])
-                print("The afternoon temperature of " + cityname + " is " + cityTemp)
+    if(tempChoice == "morning"):
+        cityTemp = str(cityDict[str(city)]["Morning Temperature"])
+        print("The morning temperature of " + cityDict[city]["name"] + " is " + cityTemp)
+    elif(tempChoice == "afternoon"):
+        cityTemp = str(cityDict[str(city)]["Afternoon Temperature"])
+        print("The afternoon temperature of " + cityDict[city]["name"] + " is " + cityTemp)
 
-            else:
-                print('incorrect input please try again')
-                cityChoice()
+    else:
+        print('incorrect input please try again')
+        cityChoice()
 
 
+        
     
