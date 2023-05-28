@@ -112,17 +112,17 @@ countryDict = {
         },
         "country5": {
             "name": "Sri Lanka",
-            "December": "Northeast Monsoon",
-            "January": "Northeast Monsoon",
-            "February": "Northeast Monsoon",
+            "December": "Monsoon",
+            "January": "Monsoon",
+            "February": "Monsoon",
          
             "March": "Inter-monsoon",
             "April": "Inter-monsoon",
             "May": "Inter-monsoon",
 
-            "June": "Southeast Monsoon",
-            "July": "Southeast Monsoon",
-            "August": "Southeast Monsoon",
+            "June": "Monsoon",
+            "July": "Monsoon",
+            "August": "Monsoon",
 
             "September": "Inter-monsoon",
             "October": "Inter-monsoon",
@@ -132,7 +132,7 @@ countryDict = {
 def countryChoice():
     validCountryIn = False
     seasonChoice =  "Meteorological"
-    print("Which City would you like the city for: ")
+    print("Which Country would you like the season for: ")
     print("Current choices are:")
     for i in range(1, len(countryDict)+1):
         print(countryDict["country" + str(i)]["name"])
@@ -198,7 +198,7 @@ def output(countryKey, seasonChoice):
             print("Invalid month please try again")
             output(countryKey, seasonChoice)
 
-        
+         
 
 
 

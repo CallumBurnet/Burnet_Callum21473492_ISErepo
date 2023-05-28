@@ -75,7 +75,7 @@ CODE
 
     - Debugging and Error Localization: White box testing can help identify and localize errors within the code. By examining the internal paths and variables, testers can pinpoint the exact location where an error occurs, making it easier for developers to debug and fix the issue.
 
-    -  Code Optimization: White box testing can also highlight areas of the code that can be optimized for better performance, efficiency, or maintainability. By analyzing the code during testing, potential improvements or optimizations may be identified.
+    -Code Optimization: White box testing can also highlight areas of the code that can be optimized for better performance, efficiency, or maintainability. By analyzing the code during testing, potential improvements or optimizations may be identified.
 ```python
     def test_cityDict(self):
         # Verify the keys in the cityDict
