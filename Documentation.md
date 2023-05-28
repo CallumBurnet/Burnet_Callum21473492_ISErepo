@@ -12,7 +12,7 @@
     > Ethics
     Through a simple yet effect small project to test all of these concepts.
 # Module Description
-    ## Temperature file
+## Temperature file
     1. cityChoice()
     2. cityOutput()
     ## Weather file
