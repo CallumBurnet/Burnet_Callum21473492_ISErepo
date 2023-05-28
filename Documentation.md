@@ -97,5 +97,7 @@ CODE
 ```
 # Test implementation & execution
 # Version control
+>Version Control is utilised in the project as a method of change management, and project ease of access. Many times during the development of the project I switched between PC and laptop, cloning the remote repository was much easier than manually saving and sending between devices.
+ 
 # Ethics
 # Discussion
