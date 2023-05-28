@@ -142,8 +142,6 @@ def countryChoice():
         if(countryInput == countryDict["country" +str(i)]["name"]):
             countryKey = "country" + str(i)
             validCountryIn = True
-        else:
-            print("Fail at Country")
     if(validCountryIn == True and countryInput == "Australia"):
         print("Which season system would you like to use: ")
         print("Meteorological")
@@ -158,7 +156,8 @@ def countryChoice():
     if(validCountryIn == True and countryInput != "Australia"):
         output(countryKey, seasonChoice)
     else:
-        print("Failure at and statment")
+        print("incorrect input try again")
+        countryChoice()
 
 
 def output(countryKey, seasonChoice):
@@ -169,9 +168,6 @@ def output(countryKey, seasonChoice):
     else:
         print("Fail at month")
         output(countryKey, seasonChoice)
-
-    
-    print("Hellos it made it to the output function")
     if(countryDict[countryKey]["name"] == "Australia" and validMonthIn == True):
         if(seasonChoice == "Meteorological"):
             Weather = countryDict[countryKey][seasonChoice][monthInput]
@@ -188,8 +184,6 @@ def output(countryKey, seasonChoice):
                 
             
             
-            
-
         elif(seasonChoice == "Noongar"):
             Weather = countryDict[countryKey][seasonChoice][monthInput]
             Weather = Weather.lower()
@@ -197,6 +191,7 @@ def output(countryKey, seasonChoice):
     else:
         if(validMonthIn == True):
             Weather = countryDict[countryKey][monthInput]
+            print("In " + countryDict[countryKey]["name"] + " the season is " + Weather)
             Weather = Weather.lower()
             showImages(Weather)
         else: 
