@@ -22,12 +22,12 @@ Through a simple yet effect small project to test all of these concepts.
 
 # Black box test cases
 ## Equivalence partitioning
-> Equivalence partitioning is a testing technique that divides the input data into groups or partitions based on the assumption that if one input in a partition is valid (or invalid), the others in the same partition will exhibit similar behavior.
-> The goal of equivalence partitioning is to reduce the number of test cases while ensuring adequate coverage of different input conditions.
+- Equivalence partitioning is a testing technique that divides the input data into groups or partitions based on the assumption that if one input in a partition is valid (or invalid), the others in the same partition will exhibit similar behavior.
+- The goal of equivalence partitioning is to reduce the number of test cases while ensuring adequate coverage of different input conditions.
 Test cases are designed to cover each partition at least once, rather than testing every possible input individually.
-> It helps identify representative values that are likely to uncover defects.Equivalence partitioning is a testing technique that divides the input data into groups or partitions based on the assumption that if one input in a partition is valid (or invalid), the others in the same partition will exhibit similar behavior.
-> The goal of equivalence partitioning is to reduce the number of test cases while ensuring adequate coverage of different input conditions.
-> Test cases are designed to cover each partition at least once, rather than testing every possible input individually.
+- It helps identify representative values that are likely to uncover defects.Equivalence partitioning is a testing technique that divides the input data into groups or partitions based on the assumption that if one input in a partition is valid (or invalid), the others in the same partition will exhibit similar behavior.
+- The goal of equivalence partitioning is to reduce the number of test cases while ensuring adequate coverage of different input conditions.
+- Test cases are designed to cover each partition at least once, rather than testing every possible input individually.
 It helps identify representative values that are likely to uncover defects.
 
 CODE
@@ -57,14 +57,14 @@ CODE
         self.assertEqual(output, expected_output)
 ```
 ## Boundary value analysis
-> Boundary value analysis is a testing technique that focuses on testing the boundaries or limits of input values.
+    - Boundary value analysis is a testing technique that focuses on testing the boundaries or limits of input values.
     - The idea behind boundary value analysis is that errors often occur at the edges or boundaries of input ranges, rather than in the middle.
     - Test cases are designed to test values at the lower and upper boundaries of valid and invalid ranges, as well as just inside and just outside the boundaries.
     - The goal is to uncover errors that are more likely to occur near the boundaries and ensure the system handles them correctly.
     - Test cases are typically derived from the minimum and maximum valid input values, as well as values immediately above and below those limits.
 
 # White box test cases
->White box testing is a software testing technique that focuses on the internal structure and implementation details of the system under test. It involves testing the code's internal paths, branches, and logic to ensure that all possible execution paths are tested
+    - White box testing is a software testing technique that focuses on the internal structure and implementation details of the system under test. It involves testing the code's internal paths, branches, and logic to ensure that all possible execution paths are tested
     - Understanding the Internal Structure: White box testers have access to the internal workings of the system, including the source code, algorithms, and data structures. They analyze the code and its implementation details to identify potential areas of concern and develop test cases accordingly.
 
     - Coverage Criteria: White box testing aims to achieve thorough coverage of the code by exercising all possible paths, branches, and conditions. Common coverage criteria used in white box testing include statement coverage, branch coverage, path coverage, and condition coverage.
@@ -97,7 +97,14 @@ CODE
 ```
 # Test implementation & execution
 # Version control
->Version Control is utilised in the project as a method of change management, and project ease of access. Many times during the development of the project I switched between PC and laptop, cloning the remote repository was much easier than manually saving and sending between devices.
+Version Control is utilised in the project as a method of change management, and project ease of access. Many times during the development of the project I switched between PC and laptop, cloning the remote repository was much easier than manually saving and sending between devices.
  
 # Ethics
+## User Privacy
+
+## Data Accuracy
+## Transparency and informed Consent
+## Non-Discriminant
+## Accessibility Design
+## Responsible Use of Data
 # Discussion
