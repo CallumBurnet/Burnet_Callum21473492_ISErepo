@@ -54,10 +54,10 @@ Weather Functionality
 
 Temperature Functionality
 - For the temperature functionality there arent any boundary values to test
-| Category | Test Data | Result |
-|:----------|:----------|:---------|
-|Valid City, Valid time| city = "Perth", tempChoice = "morning"|"the morning temperature of Perth is 18.2"|
-|Valid City, Invalid time | city = "Perth", tempChoice = "morninggggg" | "incorrect input please try again"|
+|Category|Test Data|Result|
+|----------|----------|---------|
+|Valid City, Valid time|city = "Perth", tempChoice = "morning"|"the morning temperature of Perth is 18.2"|
+|Valid City, Invalid time |city = "Perth", tempChoice = "morninggggg"|"incorrect input please try again"|
 
 
 # White box test cases
