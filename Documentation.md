@@ -12,10 +12,10 @@ This project is to validate the core concepts learnt in Introduction to Software
 > Ethics
 Through a simple yet effect small project to test all of these concepts.
 # Module Description
-## Temperature file
+## Temperature file functions
 1. cityChoice()
 2. cityOutput()
-## Weather file
+## Weather file functions
 1. countryChoice()
 2. output()
 # Modularity
@@ -30,13 +30,13 @@ Test cases are designed to cover each partition at least once, rather than testi
 >Test cases are designed to cover each partition at least once, rather than testing every possible input individually.
 It helps identify representative values that are likely to uncover defects.
 
-Weather Functionality
+### Weather Functionality
 - For the weather file i will unit test multiple conditions such as
 - - Country from list, and valid month
 - - Syntax error of Country, country not specified
 - - Syntax error of Month
 
-Temperature Functionality
+### Temperature Functionality
 - For the temperature file i will unit test multiple conditions such as
 - - City from list, valid time
 - - Syntax error of time
@@ -50,8 +50,15 @@ Temperature Functionality
 
 Weather Functionality
 - For the weather functionality there arent any boundary values to test
+- Test Designs
+
 Temperature Functionality
 - For the temperature functionality there arent any boundary values to test
+| Category | Test Data | Result |
+|:----------|:----------|:---------|
+|Valid City, Valid time| city = "Perth", tempChoice = "morning"|"the morning temperature of Perth is 18.2"|
+|Valid City, Invalid time | city = "Perth", tempChoice = "morninggggg" | "incorrect input please try again"|
+
 
 # White box test cases
 >White box testing is a software testing technique that focuses on the internal structure and implementation details of the system under test. It involves testing the code's internal paths, branches, and logic to ensure that all possible execution paths are tested
@@ -65,30 +72,11 @@ Code Optimization: White box testing can also highlight areas of the code that c
 - - For the weather function i will be white box testing and assurting the values of the dictionaries, as the code is quite simple all of the functionalities can be tested in black box testing as pathways dont need to be understood, the only pathway that doesnt get tested in the values of the dictionary
 - Temperature function
 - - For the Temperature function i will be white box testing and assurting the values of the dictionaries, as the code is quite simple all of the functionalities can be tested in black box testing as pathways dont need to be understood, the only pathway that doesnt get tested in the values of the dictionary
-
-```python
-    def test_cityDict(self):
-        # Verify the keys in the cityDict
-        self.assertIn("city1", Temp.cityDict)
-        self.assertIn("city2", Temp.cityDict)
-
-        # Verify the values for specific keys
-        self.assertEqual(Temp.cityDict["city1"]["name"], "Perth")
-        self.assertEqual(Temp.cityDict["city1"]["Min"], 0.7)
-        self.assertEqual(Temp.cityDict["city1"]["Max"], 46.0)
-        self.assertEqual(Temp.cityDict["city1"]["Morning Temperature"], 18.2)
-        self.assertEqual(Temp.cityDict["city1"]["Afternoon Temperature"], 23.0)
-
-        self.assertEqual(Temp.cityDict["city2"]["name"], "Adelaide")
-        self.assertEqual(Temp.cityDict["city2"]["Min"], -1.0)
-        self.assertEqual(Temp.cityDict["city2"]["Max"], 49.0)
-        self.assertEqual(Temp.cityDict["city2"]["Morning Temperature"], 16.5)
-        self.assertEqual(Temp.cityDict["city2"]["Afternoon Temperature"], 21.0)
-```
 # Test implementation & execution
+## Black Box implementation
+## White Box implementation
 # Version control
 - Version Control is utilised in the project as a method of change management, and project ease of access. Many times during the development of the project I switched between PC and laptop, cloning the remote repository was much easier than manually saving and sending between devices.
- 
 # Ethics
 ## User Privacy
 - Safeguard the privacy and confidentiality of user data
