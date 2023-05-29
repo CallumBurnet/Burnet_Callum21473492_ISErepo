@@ -110,7 +110,7 @@ countryDict = {
             "October": "Inter-monsoon",
             "November": "Inter-monsoon",
         },
-        "country5": {
+        "country6": {
             "name": "Sri Lanka",
             "December": "Monsoon",
             "January": "Monsoon",
