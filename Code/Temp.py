@@ -27,18 +27,41 @@ def cityChoice():
         if(choice == cityDict["city"+ str(i)]["name"]):
             city = "city" + str(i)
             Cityoutput(city)
+        else:
+            print("Not a valid country")
     
 def Cityoutput(city):
-    print("Would you like the morning or afternoon temperature?")
+    print("Is it the morning or afternoon?")
     tempChoice = input("")
     tempChoice = tempChoice.lower()
             
     if(tempChoice == "morning"):
-        cityTemp = str(cityDict[str(city)]["Morning Temperature"])
-        print("The morning temperature of " + cityDict[city]["name"] + " is " + cityTemp)
+        cityTemp = cityDict[str(city)]["Morning Temperature"]
+        currTemperature = float(input("What is the temperature"))
+        if(currTemperature == cityTemp):
+            print("The Current temperature of "+ cityDict[city]["name"] + "is equal to the average temperature: ")
+        elif(currTemperature < cityTemp):
+            if((cityTemp - currTemperature) >= 5):
+                print("The difference of temperature is greater than 5 degrees lower")
+            print("The morning temperature of " + cityDict[city]["name"] + " is less than the average temperature")
+        elif(currTemperature > cityTemp):
+            if((currTemperature - cityTemp) >= 5):
+                print("The difference of temperature is greater than 5 degrees lower")
+            print("The morning temperature of " + cityDict[city]["name"] + " is more than the average temperature")
+        
     elif(tempChoice == "afternoon"):
-        cityTemp = str(cityDict[str(city)]["Afternoon Temperature"])
-        print("The afternoon temperature of " + cityDict[city]["name"] + " is " + cityTemp)
+        cityTemp = cityDict[str(city)]["Afternoon Temperature"]
+        currTemperature = float(input("What is the temperature"))
+        if(currTemperature == cityTemp):
+            print("The Current temperature of "+ cityDict[city]["name"] + "is equal to the average temperature: ")
+        elif(currTemperature < cityTemp):
+            if((cityTemp - currTemperature) >= 5):
+                print("The difference of temperature is greater than 5 degrees lower")
+            print("The afternoon temperature of " + cityDict[city]["name"] + " is less than the average temperature")
+        elif(currTemperature > cityTemp):
+            if((currTemperature - cityTemp) >= 5):
+                print("The difference of temperature is greater than 5 degrees lower")
+            print("The afternooon temperature of " + cityDict[city]["name"] + " is more than the average temperature")
 
     else:
         print('incorrect input please try again')
