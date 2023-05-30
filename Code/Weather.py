@@ -136,7 +136,7 @@ def countryChoice():
     print("Current choices are:")
     for i in range(1, len(countryDict)+1):
         print(countryDict["country" + str(i)]["name"])
-    countryInput = input("Country:")
+    countryInput = input("Country: ")
     countryKey = ""
     for i in range(1, len(countryDict)+1):
         if(countryInput == countryDict["country" +str(i)]["name"]):
@@ -153,10 +153,10 @@ def countryChoice():
             print("Incorrect Seasonal System please try again")
             countryChoice()
 
-    if(validCountryIn == True and countryInput != "Australia"):
+    elif(validCountryIn == True and countryInput != "Australia"):
         output(countryKey, seasonChoice)
     else:
-        print("incorrect input try again")
+        print("incorrect at beginning weather loop")
         countryChoice()
 
 
@@ -171,7 +171,7 @@ def output(countryKey, seasonChoice):
     if(countryDict[countryKey]["name"] == "Australia" and validMonthIn == True):
         if(seasonChoice == "Meteorological"):
             Weather = countryDict[countryKey][seasonChoice][monthInput]
-            imageChoice = input("Would you like to see the image of " + Weather + " Y/N")
+            imageChoice = input("Would you like to see the image of " + Weather + " Y/N: ")
             imageChoice = imageChoice.upper()
             if(imageChoice == "Y"):
                 file = Weather.lower()
@@ -186,17 +186,38 @@ def output(countryKey, seasonChoice):
             
         elif(seasonChoice == "Noongar"):
             Weather = countryDict[countryKey][seasonChoice][monthInput]
-            Weather = Weather.lower()
-            showImages(Weather)
-    else:
-        if(validMonthIn == True):
-            Weather = countryDict[countryKey][monthInput]
-            print("In " + countryDict[countryKey]["name"] + " the season is " + Weather)
-            Weather = Weather.lower()
-            showImages(Weather)
+            file = Weather.lower()
+            print("The season of is "+ Weather )
+            imageChoice = input("Would you like to see the image of " + Weather + " Y/N: ")
+            imageChoice = imageChoice.upper()
+            if(imageChoice == "Y"):
+                file = Weather.lower()
+                showImages(file)
+            elif(imageChoice == "N"):
+                print("Okay bye")
+            else: 
+                print("Incorrect input")
+                output(countryKey, monthInput)
+            
+            
+    
+    elif(validMonthIn == True):
+        Weather = countryDict[countryKey][monthInput]
+        print("In " + countryDict[countryKey]["name"] + " the season is " + Weather)
+        imageChoice = input("Would you like to see the image of " + Weather + " Y/N")
+        imageChoice = imageChoice.upper()
+        if(imageChoice == "Y"):
+            file = Weather.lower()
+            showImages(file)
+        elif(imageChoice == "N"):
+            print("Okay bye")
         else: 
-            print("Invalid month please try again")
-            output(countryKey, seasonChoice)
+            print("Incorrect input")
+            output(countryKey, monthInput)
+            
+    else:
+        print("Invalid month please try again")
+        output(countryKey, seasonChoice)
 
          
 
