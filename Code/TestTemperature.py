@@ -5,8 +5,8 @@ import Temp
 
 class TestTemperatureModule(unittest.TestCase):
     @patch('sys.stdout', new_callable=StringIO)  # Mock sys.stdout to capture print statements
-    @patch('builtins.input', side_effect=['Perth', 'morning'])  # Mock user input
-    def test_cityChoice(self, mock_input, mock_stdout):
+    @patch('builtins.input', side_effect=['Perth', 'morning', '18.2'])  # Mock user input
+    def test_cityEqual(self, mock_input, mock_stdout):
         # Call the function you want to test
         Temp.cityChoice()
         
@@ -14,18 +14,59 @@ class TestTemperatureModule(unittest.TestCase):
         output = mock_stdout.getvalue().strip()
         
         # Assert the expected output
-        expected_output = "Which City are you selecting: \nPerth\nAdelaide\nWould you like the morning or afternoon temperature?\nThe morning temperature of Perth is 18.2"
+        expected_output = "Which City are you selecting: \nPerth\nAdelaide\nIs it the morning or afternoon?\nThe current temperature of Perth is equal to the average temperature"
         self.assertEqual(output, expected_output)
 
     @patch('sys.stdout', new_callable=StringIO)  # Mock sys.stdout to capture print statements
-    @patch('builtins.input', side_effect=['morning'])  # Mock user input
+    @patch('builtins.input', side_effect=['Perth', 'morninggggg','n'])  # Mock user input
+    def test_TimeInvalid(self, mock_input, mock_stdout):
+        # Call the function you want to test
+        Temp.cityChoice()
+        
+        # Get the printed output
+        output = mock_stdout.getvalue().strip()
+        
+        # Assert the expected output
+        expected_output = "Which City are you selecting: \nPerth\nAdelaide\nIs it the morning or afternoon?\nincorrect input"
+        self.assertEqual(output, expected_output)
+    @patch('sys.stdout', new_callable=StringIO)  # Mock sys.stdout to capture print statements
+    @patch('builtins.input', side_effect=['Australia','n'])  # Mock user input
+    def test_InvalidCity(self, mock_input, mock_stdout):
+        # Call the function you want to test
+        Temp.cityChoice()
+        
+        # Get the printed output
+        output = mock_stdout.getvalue().strip()
+        
+        # Assert the expected output
+        expected_output = "Which City are you selecting: \nPerth\nAdelaide"
+        self.assertEqual(output, expected_output)
+
+    @patch('sys.stdout', new_callable=StringIO)  # Mock sys.stdout to capture print statements
+    @patch('builtins.input', side_effect=['Australia','n'])  # Mock user input
+    def test_InvalidBoth(self, mock_input, mock_stdout):
+        # Call the function you want to test
+        Temp.cityChoice()
+        
+        # Get the printed output
+        output = mock_stdout.getvalue().strip()
+        
+        # Assert the expected output
+        expected_output = "Which City are you selecting: \nPerth\nAdelaide"
+        self.assertEqual(output, expected_output)
+
+
+
+
+    @patch('sys.stdout', new_callable=StringIO)  # Mock sys.stdout to capture print statements
+    @patch('builtins.input', side_effect=['morning','18.0'])  # Mock user input
     def test_Cityoutput_normal(self, mock_input, mock_stdout):
         # Call the function you want to test
         Temp.Cityoutput('city1')
         # Get the printed output
         output = mock_stdout.getvalue().strip()
         # Assert the expected output
-        expected_output = "Would you like the morning or afternoon temperature?\nThe morning temperature of Perth is 18.2"
+        expected_output = "Is it the morning or afternoon?\nThe morning temperature of Perth is less than the average temperature"
         self.assertEqual(output, expected_output)
 
     def test_cityDict(self):
