@@ -1,7 +1,8 @@
 #Main module for Project which will call all modules
 #Main module for Project which will call all modules
-import Weather
+import Season
 import Temp
+import unittest
 
 def mainLoop():
     firstChoice = input("Would you like to: \n Find the Temperature of a city \n Find the Season of a Country \n Exit \n")
@@ -9,15 +10,21 @@ def mainLoop():
         Temp.cityChoice()
 
     elif(firstChoice == "Find the Season of a Country"):
-        Weather.countryChoice()
+        Season.countryChoice()
     elif(firstChoice == "Exit"):
         print("Bye")
     else:
-        print("Incorret choice please try")
-        mainLoop()
+        choice = input("Incorret input would you like to try again Y/N: ").lower()
+        if(choice == 'y'):
+            mainLoop()
+        elif(choice == 'n'):
+            print("Bye")
+        else:
+            print("incorrect input try again")
+            mainLoop()
 
-    
 
 
-mainLoop()
+if __name__ == '__main__':
+    mainLoop()
 

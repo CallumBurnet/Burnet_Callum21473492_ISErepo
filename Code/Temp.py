@@ -31,8 +31,9 @@ def cityChoice():
             Cityoutput(city)
 
     if(cityValid != True):
-        print("Invalid City please try again")
-        cityChoice()
+        choice = input("Incorrect input would you like to try again Y/N: ").lower()
+        if(choice == "y"):
+            cityChoice()
     
     
 def Cityoutput(city):
@@ -48,7 +49,7 @@ def Cityoutput(city):
             if(currTemperature > cityDict[str(city)]["Min"] and currTemperature < cityDict[str(city)]["Max"]):
 
                 if(currTemperature == cityTemp):
-                    print("The Current temperature of "+ cityDict[city]["name"] + "is equal to the average temperature: ")
+                    print("The current temperature of "+ cityDict[city]["name"] + " is equal to the average temperature")
                 elif(currTemperature < cityTemp):
                     if((cityTemp - currTemperature) >= 5):
                         print("The difference of temperature is greater than 5 degrees lower")
@@ -59,6 +60,7 @@ def Cityoutput(city):
                     print("The morning temperature of " + cityDict[city]["name"] + " is more than the average temperature")
             else:
                 print("Invalid temperature")
+
         except ValueError:
             print("Invalid Temperature please try again")
             cityChoice()
@@ -70,7 +72,7 @@ def Cityoutput(city):
             currTemperature =  float(currTemperature)
             if(currTemperature > cityDict[str(city)]["Min"] and currTemperature < cityDict[str(city)]["Max"]):
                 if(currTemperature == cityTemp):
-                    print("The Current temperature of "+ cityDict[city]["name"] + "is equal to the average temperature")
+                    print("The current temperature of "+ cityDict[city]["name"] + " is equal to the average temperature")
                 elif(currTemperature < cityTemp):
                     if((cityTemp - currTemperature) >= 5):
                         print("The difference of temperature is greater than 5 degrees lower")
@@ -86,8 +88,10 @@ def Cityoutput(city):
             cityChoice()
 
     else:
-        print('incorrect input please try again')
-        cityChoice()
+        print('incorrect input')
+        tempChoice = input("Would you like to try again Y/N").lower()
+        if(tempChoice == 'y'):
+            Cityoutput(city)
 
 
         
