@@ -69,6 +69,51 @@ class TestTemperatureModule(unittest.TestCase):
         expected_output = "Is it the morning or afternoon?\nThe morning temperature of Perth is less than the average temperature"
         self.assertEqual(output, expected_output)
 
+    ## White box testing
+    @patch('sys.stdout', new_callable=StringIO)  # Mock sys.stdout to capture print statements
+    @patch('builtins.input', side_effect=['morning','0.6'])  # Mock user input
+    def test_Cityoutput_LowerBoundFail(self, mock_input, mock_stdout):
+        # Call the function you want to test
+        Temp.Cityoutput('city1')
+        # Get the printed output
+        output = mock_stdout.getvalue().strip()
+        # Assert the expected output
+        expected_output = "Is it the morning or afternoon?\nInvalid temperature"
+        self.assertEqual(output, expected_output)
+    @patch('sys.stdout', new_callable=StringIO)  # Mock sys.stdout to capture print statements
+    @patch('builtins.input', side_effect=['morning','0.7'])  # Mock user input
+    def test_Cityoutput_LowerBoundPass(self, mock_input, mock_stdout):
+        # Call the function you want to test
+        Temp.Cityoutput('city1')
+        # Get the printed output
+        output = mock_stdout.getvalue().strip()
+        # Assert the expected output
+        expected_output = "Is it the morning or afternoon?\nThe difference of temperature is greater than 5 degrees lower than average\nThe morning temperature of Perth is less than the average temperature"
+        self.assertEqual(output, expected_output)
+
+    @patch('sys.stdout', new_callable=StringIO)  # Mock sys.stdout to capture print statements
+    @patch('builtins.input', side_effect=['afternoon','46.1'])  # Mock user input
+    def test_Cityoutput_UpperBoundFail(self, mock_input, mock_stdout):
+        # Call the function you want to test
+        Temp.Cityoutput('city1')
+        # Get the printed output
+        output = mock_stdout.getvalue().strip()
+        # Assert the expected output
+        expected_output = "Is it the morning or afternoon?\nInvalid temperature"
+        self.assertEqual(output, expected_output)
+    @patch('sys.stdout', new_callable=StringIO)  # Mock sys.stdout to capture print statements
+    @patch('builtins.input', side_effect=['afternoon','46.0'])  # Mock user input
+    def test_Cityoutput_UpperBoundPass(self, mock_input, mock_stdout):
+        # Call the function you want to test
+        Temp.Cityoutput('city1')
+        # Get the printed output
+        output = mock_stdout.getvalue().strip()
+        # Assert the expected output
+        expected_output = "Is it the morning or afternoon?\nThe difference of temperature is greater than 5 degrees higher than average\nThe afternoon temperature of Perth is more than the average temperature"
+        self.assertEqual(output, expected_output)
+
+    
+
     def test_cityDict(self):
         # Verify the keys in the cityDict
         self.assertIn("city1", Temp.cityDict)
