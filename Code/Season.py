@@ -1,5 +1,6 @@
 from PIL import Image
 import os
+import main
 countryDict = {
      "country1": {
          "name": "Australia",
@@ -238,3 +239,7 @@ def showImages(Season):
     image_path = os.path.join(documentsDir, filename)
     image = Image.open(image_path)
     image.show()
+    choice = input("Do you wish to continue Y/N").lower()
+    if(choice == "y"):
+        main.mainLoop()
+                    

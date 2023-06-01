@@ -5,7 +5,7 @@ import Season
 
 class TestSeasonModule(unittest.TestCase):
     @patch('sys.stdout', new_callable=StringIO)  # Mock sys.stdout to capture print statements
-    @patch('builtins.input', side_effect=['Spain', 'December', 'y'])  # Mock user input
+    @patch('builtins.input', side_effect=['Spain', 'December', 'y', 'n'])  # Mock user input
     def test_countryChoice(self, mock_input, mock_stdout):
         # Call the function you want to test
         Season.countryChoice()
@@ -16,7 +16,7 @@ class TestSeasonModule(unittest.TestCase):
         self.assertEqual(output, expected_output)
 
     @patch('sys.stdout', new_callable=StringIO)  # Mock sys.stdout to capture print statements
-    @patch('builtins.input', side_effect=['Australia', 'Noongar', 'December', 'n'])  # Mock user input
+    @patch('builtins.input', side_effect=['Australia', 'Noongar', 'December', 'n', 'n'])  # Mock user input
     def test_AustraliaCountry(self, mock_input, mock_stdout):
         # Call the function you want to test
         Season.countryChoice()
@@ -51,7 +51,7 @@ class TestSeasonModule(unittest.TestCase):
       
     
     @patch('sys.stdout', new_callable=StringIO)  # Mock sys.stdout to capture print statements
-    @patch('builtins.input', side_effect=['December', 'y'])  # Mock user input
+    @patch('builtins.input', side_effect=['December', 'y', 'n'])  # Mock user input
     def test_countryOutput(self, mock_input, mock_stdout):
         # Call the function you want to test
         Season.output('country6', "Meteorological")

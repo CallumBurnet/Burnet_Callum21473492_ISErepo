@@ -5,7 +5,7 @@ import Temp
 
 class TestTemperatureModule(unittest.TestCase):
     @patch('sys.stdout', new_callable=StringIO)  # Mock sys.stdout to capture print statements
-    @patch('builtins.input', side_effect=['Perth', 'morning', '18.2'])  # Mock user input
+    @patch('builtins.input', side_effect=['Perth', 'morning', '18.2', 'n'])  # Mock user input
     def test_cityEqual(self, mock_input, mock_stdout):
         # Call the function you want to test
         Temp.cityChoice()
@@ -59,7 +59,7 @@ class TestTemperatureModule(unittest.TestCase):
 
 
     @patch('sys.stdout', new_callable=StringIO)  # Mock sys.stdout to capture print statements
-    @patch('builtins.input', side_effect=['morning','18.0'])  # Mock user input
+    @patch('builtins.input', side_effect=['morning','18.0', 'n'])  # Mock user input
     def test_Cityoutput_normal(self, mock_input, mock_stdout):
         # Call the function you want to test
         Temp.Cityoutput('city1')
@@ -81,7 +81,7 @@ class TestTemperatureModule(unittest.TestCase):
         expected_output = "Is it the morning or afternoon?\nInvalid temperature"
         self.assertEqual(output, expected_output)
     @patch('sys.stdout', new_callable=StringIO)  # Mock sys.stdout to capture print statements
-    @patch('builtins.input', side_effect=['morning','0.7'])  # Mock user input
+    @patch('builtins.input', side_effect=['morning','0.7', 'n'])  # Mock user input
     def test_Cityoutput_LowerBoundPass(self, mock_input, mock_stdout):
         # Call the function you want to test
         Temp.Cityoutput('city1')
@@ -102,7 +102,7 @@ class TestTemperatureModule(unittest.TestCase):
         expected_output = "Is it the morning or afternoon?\nInvalid temperature"
         self.assertEqual(output, expected_output)
     @patch('sys.stdout', new_callable=StringIO)  # Mock sys.stdout to capture print statements
-    @patch('builtins.input', side_effect=['afternoon','46.0'])  # Mock user input
+    @patch('builtins.input', side_effect=['afternoon','46.0', 'n'])  # Mock user input
     def test_Cityoutput_UpperBoundPass(self, mock_input, mock_stdout):
         # Call the function you want to test
         Temp.Cityoutput('city1')

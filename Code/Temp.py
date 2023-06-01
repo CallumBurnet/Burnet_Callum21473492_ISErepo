@@ -1,5 +1,5 @@
 #This file will be for the Temperature Module
-
+import main
 cityDict = {
     "city1": {
         "name": "Perth",
@@ -58,6 +58,10 @@ def Cityoutput(city):
                     if((currTemperature - cityTemp) >= 5):
                         print("The difference of temperature is greater than 5 degrees greater than average")
                     print("The morning temperature of " + cityDict[city]["name"] + " is more than the average temperature")
+                choice = input("Do you wish to continue Y/N").lower()
+                if(choice == "y"):
+                    main.mainLoop()
+                    
             else:
                 print("Invalid temperature")
 
@@ -81,6 +85,10 @@ def Cityoutput(city):
                     if((currTemperature - cityTemp) >= 5):
                         print("The difference of temperature is greater than 5 degrees higher than average")
                     print("The afternoon temperature of " + cityDict[city]["name"] + " is more than the average temperature")
+                choice = input("Do you wish to continue Y/N").lower()
+                if(choice == "y"):
+                    main.mainLoop()
+                    
             else:
                 print("Invalid temperature")
         except ValueError:
@@ -92,6 +100,7 @@ def Cityoutput(city):
         tempChoice = input("Would you like to try again Y/N").lower()
         if(tempChoice == 'y'):
             Cityoutput(city)
+    
 
 
         
